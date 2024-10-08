@@ -5,10 +5,10 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "src/test/java/resources/standardUser.feature",
+        features = "src/test/java/resources/products.feature",
         glue = "steps"
 )
 
-public class StandardUserTest {
+public class ProductsTest {
     
 }
