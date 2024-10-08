@@ -12,8 +12,8 @@ import io.cucumber.java.en.When;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class LoginSteps {
-    WebDriver driver;
 
+    WebDriver driver;
 
     @Given("I am on the login page")
     public void i_am_on_the_login_page() {
@@ -29,7 +29,6 @@ public class LoginSteps {
         driver.findElement(By.cssSelector(".btn_action")).click();
     }
 
-
     @When("I click on login button")
     public void i_click_on_login_button() {
         driver.findElement(By.cssSelector(".btn_action")).click();
@@ -43,12 +42,6 @@ public class LoginSteps {
     @When("I enter password {string}")
     public void i_enter_password(String password) {
         driver.findElement(By.id("password")).sendKeys(password);
-    }
-
-    @When("I enter invalid credentials")
-    public void i_enter_invalid_credentials() {
-        driver.findElement(By.id("user-name")).sendKeys("inavalid_user_username");
-        driver.findElement(By.id("password")).sendKeys("invalid_user_password");  
     }
 
     @Then("I should be redirected to the homepage")

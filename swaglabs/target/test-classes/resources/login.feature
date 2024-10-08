@@ -5,41 +5,18 @@ Feature: Login Functionality
     When I enter valid credentials
     Then I should be redirected to the homepage
 
-  Scenario: Unsuccessful login - empty username and password
+  Scenario Outline: Unsuccesful login with different credentials
     Given I am on the login page
+    When I enter username "<username>"
+    When I enter password "<password>"
     When I click on login button
-    Then I should see error message "Epic sadface: Username is required"
+    Then I should see error message "<message>"
 
-  Scenario: Unsuccessful login - empty password
-    Given I am on the login page
-    When I enter username "standard_user"
-    When I click on login button
-    Then I should see error message "Epic sadface: Password is required"
-
-  Scenario: Unsuccessful login - empty username
-    Given I am on the login page
-    When I enter password "secret_sauce"
-    When I click on login button
-    Then I should see error message "Epic sadface: Username is required"
-
-  Scenario: Unsuccesful login - invalid credentials
-    Given I am on the login page
-    When I enter invalid credentials
-    When I click on login button
-    Then I should see error message "Epic sadface: Username and password do not match any user in this service"
-
-  Scenario: Unsuccesful login - invalid username
-    Given I am on the login page
-    When I enter username "invalid_username"
-    When I enter password "secret_sauce"
-    When I click on login button
-    Then I should see error message "Epic sadface: Username and password do not match any user in this service"
-  
-  Scenario: Unsuccesful login - invalid password
-    Given I am on the login page
-    When I enter username "standard_user"
-    When I enter password "invalid_password"
-    When I click on login button
-    Then I should see error message "Epic sadface: Username and password do not match any user in this service"
-
-  
+    Examples:
+      | username       | password     | message                                                                   |
+      | invalid_user   | secret_sauce | Epic sadface: Username and password do not match any user in this service |
+      | standard_user  | wrong_pass   | Epic sadface: Username and password do not match any user in this service |
+      |                | secret_sauce | Epic sadface: Username is required                                        |
+      | standard_user  |              | Epic sadface: Password is required                                        |
+      |                |              | Epic sadface: Username is required                                        |
+      |invalid_user    | wrong_pass   | Epic sadface: Username and password do not match any user in this service |
