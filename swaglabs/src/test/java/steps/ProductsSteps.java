@@ -1,9 +1,10 @@
 package steps;
 
-import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -46,18 +47,36 @@ public class ProductsSteps {
         sel.selectByVisibleText(sorting);        
     }
 
-    @Then("I sholud see products sorted in descending order by name")
-    public void i_sholud_see_products_sorted_in_descending_order_by_name () {
+    @Then("I sholud see products sorted in {string} order by {string}")
+    public void i_sholud_see_products_sorted_in_descending_order_by_name (String order, String parameter) {
         List<WebElement> lista = driver.findElements(By.xpath("//div[@class='inventory_item']"));
         List<String> listOfNames = new ArrayList<>();
-        for (WebElement item : lista) {
-            listOfNames.add(item.findElement(By.className("inventory_item_label")).findElement(By.tagName("a")).getText());
+        List<Double> listOfPrices = new ArrayList<>();
+        if (parameter.equals("price")) { 
+            for (WebElement item : lista) {
+                String priceAll  = item.findElement(By.className("pricebar")).findElement(By.className("inventory_item_price")).getText();
+                String priceText = priceAll.replace("$", "").trim();
+                Double price  = Double.parseDouble(priceText);
+                listOfPrices.add(price);
+            }
+            List<Double> sortedPrices = new ArrayList<>(listOfPrices);
+            if (order.equals("d")) {
+                Collections.sort(sortedPrices, Collections.reverseOrder());
+                assertEquals(listOfPrices, sortedPrices);;
+            }
+            else if (order.equals("a")) {
+                Collections.sort(sortedPrices);
+                assertEquals(listOfPrices, sortedPrices);
+            }
         }
-        boolean sorted = true;        
-        for (int i = 1; i < listOfNames.size(); i++) {
-            if (listOfNames.get(i-1).compareTo(listOfNames.get(i)) < 0) sorted = false;
+        else if (parameter.equals("name")) {
+            for (WebElement item : lista) {
+                listOfNames.add(item.findElement(By.className("inventory_item_label")).findElement(By.tagName("a")).getText());
+            }
+            List<String> sortedNames = new ArrayList<>(listOfNames);
+            Collections.sort(sortedNames, Collections.reverseOrder());
+            assertEquals(sortedNames, listOfNames);
         }
-        assertTrue(sorted);
     }
 
     @After
