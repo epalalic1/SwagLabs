@@ -17,16 +17,28 @@ Feature: Product display
       | Price (low to high) | a            | price             |
 
  Scenario: Adding product to cart
-    When I click on Add to cart button of product with name "Sauce Labs Backpack"
+    When I click on Add to cart button for the following products:
+     | product_name |
+     | Sauce Labs Backpack |
     Then I should see badge on shopping cart with "1" product
     And I click on Shopping cart button
     Then I should be redirected to the cart page 
-    And I should see one product added to the shopping card named "Sauce Labs Backpack"
+    And I should see shoping cart with the following products:
+     | product_name |
+     | Sauce Labs Backpack |
+  
 
  Scenario: Removing product from cart on homepage
-  When I click on Add to cart button of product with name "Sauce Labs Backpack"
-  Then I should see badge on shopping cart with "1" product
-  And I click on remove button of product with name "Sauce Labs Backpack"
+  When I click on Add to cart button for the following products:
+     | product_name |
+     | Sauce Labs Backpack |
+     | Test.allTheThings() T-Shirt (Red) |
+  Then I should see badge on shopping cart with "2" product
+  And I click on remove button of the following products
+     | product_name |
+     | Sauce Labs Backpack |
   And I click on Shopping cart button
   Then I should be redirected to the cart page 
-  And I should see shopping cart with "0" product
+  And I should see shoping cart with the following products:
+     | product_name |
+     | Test.allTheThings() T-Shirt (Red) |

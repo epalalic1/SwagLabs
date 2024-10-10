@@ -13,6 +13,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.After;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -35,12 +36,15 @@ public class ProductsSteps {
         driver.findElement(By.cssSelector(".btn_action")).click();
     }
 
-    @When ("I click on Add to cart button of product with name {string}")
-    public void i_click_on_Add_to_cart_button_of_product_with_name(String name) {
+    @When ("I click on Add to cart button for the following products:")
+    public void i_click_on_Add_to_cart_button_for_the_following_products (DataTable dataTable) {
+        List<String> products = dataTable.asList(String.class);
         List<WebElement> items = driver.findElements(By.xpath("//div[@class='inventory_item']"));
         for (WebElement item : items) {
-            if (item.findElement(By.className("inventory_item_label")).findElement(By.tagName("a")).getText().equals(name)) {
-                item.findElement(By.id("add-to-cart-sauce-labs-backpack")).click();
+            for (String nameOfProduct : products) {
+                if (item.findElement(By.className("inventory_item_label")).findElement(By.tagName("a")).getText().equals(nameOfProduct)) {
+                    item.findElement(By.cssSelector("button.btn_primary")).click();
+                }
             }
         }
     }
@@ -56,27 +60,32 @@ public class ProductsSteps {
         driver.findElement(By.className("shopping_cart_link")).click();
     }
 
-    @And ("I should see one product added to the shopping card named {string}")
-    public void i_should_see_one_product_added_to_the_shopping_card_named (String name) {
+    @And ("I should see shoping cart with the following products:")
+    public void i_should_see_shoping_cart_with_the_following_products (DataTable dataTable) {
+        List<String> products = dataTable.asList(String.class);
+        Boolean areSame = true;
         List<WebElement> lista = driver.findElements(By.xpath("//div[@class='cart_item']"));
-        assertEquals(1, lista.size());
-        assertEquals(name, driver.findElement(By.className("inventory_item_name")).getText());
-    }
-
-    @And ("I click on remove button of product with name {string}")
-    public void i_click_on_remove_button_of_product_with_name (String name){
-        List<WebElement> items = driver.findElements(By.xpath("//div[@class='inventory_item']"));
-        for (WebElement item : items) {
-            if (item.findElement(By.className("inventory_item_label")).findElement(By.tagName("a")).getText().equals(name)) {
-                item.findElement(By.cssSelector("button.btn_secondary")).click();
+        for (WebElement item : lista ) {
+            String name = item.findElement(By.className("inventory_item_name")).getText();
+            if (!products.contains(name)) {
+                areSame = false;
+                break;
             }
         }
+        assertTrue(areSame);
     }
 
-    @And ("I should see shopping cart with {string} product")
-    public void i_should_see_shopping_cart_with_product(String number) {
-        List<WebElement> lista = driver.findElements(By.xpath("//div[@class='cart_item']"));
-        assertEquals(Integer.parseInt(number), lista.size());
+    @And ("I click on remove button of the following products")
+    public void i_click_on_remove_button_of_the_following_products (DataTable dataTable){
+        List<String> products = dataTable.asList(String.class);
+        List<WebElement> items = driver.findElements(By.xpath("//div[@class='inventory_item']"));
+        for (WebElement item : items) {
+            for (String nameOfProducts : products) {
+                if (item.findElement(By.className("inventory_item_label")).findElement(By.tagName("a")).getText().equals(nameOfProducts)) {
+                    item.findElement(By.cssSelector("button.btn_secondary")).click();
+                }
+            }
+        }
     }
 
     @Then ("I should see badge on shopping cart with {string} product")
@@ -86,6 +95,7 @@ public class ProductsSteps {
         assertTrue(isBadgeVisible);
         assertEquals(number,badgeText);
     }
+    
     @Then ("I should be redirected to the cart page")
     public void i_should_be_redirected_to_the_cart_page() {
         assertEquals("https://www.saucedemo.com/cart.html", driver.getCurrentUrl());
@@ -98,7 +108,7 @@ public class ProductsSteps {
     }
 
     @Then("I sholud see products sorted in {string} order by {string}")
-    public void i_sholud_see_products_sorted_in_descending_order_by_name (String order, String parameter) {
+    public void i_sholud_see_products_sorted_in_order_by (String order, String parameter) {
         List<WebElement> lista = driver.findElements(By.xpath("//div[@class='inventory_item']"));
         List<String> listOfNames = new ArrayList<>();
         List<Double> listOfPrices = new ArrayList<>();
