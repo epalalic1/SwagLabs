@@ -55,6 +55,7 @@ public class ProductsSteps {
         Select sel = new Select(webElement);
         sel.selectByVisibleText(sorting);        
     }
+
     @And ("I click on Shopping cart button")
     public void i_click_on_Shopping_cart_button() {
         driver.findElement(By.className("shopping_cart_link")).click();
@@ -95,17 +96,11 @@ public class ProductsSteps {
         assertTrue(isBadgeVisible);
         assertEquals(number,badgeText);
     }
-    
+
     @Then ("I should be redirected to the cart page")
     public void i_should_be_redirected_to_the_cart_page() {
         assertEquals("https://www.saucedemo.com/cart.html", driver.getCurrentUrl());
     }  
-
-    @Then("I should see all product displayed")
-    public void i_should_see_all_product_displayed() {
-        Boolean res = driver.findElement(By.className("inventory_list")).isDisplayed();
-        assertTrue(res);
-    }
 
     @Then("I sholud see products sorted in {string} order by {string}")
     public void i_sholud_see_products_sorted_in_order_by (String order, String parameter) {
@@ -134,12 +129,19 @@ public class ProductsSteps {
                 listOfNames.add(item.findElement(By.className("inventory_item_label")).findElement(By.tagName("a")).getText());
             }
             List<String> sortedNames = new ArrayList<>(listOfNames);
-            Collections.sort(sortedNames, Collections.reverseOrder());
-            assertEquals(sortedNames, listOfNames);
+            if (order.equals("d")) {
+                Collections.sort(sortedNames, Collections.reverseOrder());
+                assertEquals(sortedNames, listOfNames);
+            }
+            else if (order.equals("a")) {
+                Collections.sort(sortedNames);
+                assertEquals(sortedNames, listOfNames);
+            }
+            
         }
     }
 
-    @After
+    @After("@FirstSet")
     public void close(){
         driver.close();
     }

@@ -1,10 +1,15 @@
+@FirstSet
 Feature: Product display
 
  Background:
   Given I am login with standard_user
 
- Scenario: Products displayed in default ascending order by name
-  Then I should see all product displayed
+ Scenario Outline: Products displayed in default ascending order by name
+  Then I sholud see products sorted in "<order>" order by "<sorting_parameter>"
+
+  Examples:
+      | order        | sorting_parameter |
+      | a            | name              |
 
  Scenario Outline: Product displayed in specific order by specific parameter
   When I click on sorting option "<sorting_option>"
@@ -27,7 +32,6 @@ Feature: Product display
      | product_name |
      | Sauce Labs Backpack |
   
-
  Scenario: Removing product from cart on homepage
   When I click on Add to cart button for the following products:
      | product_name |
