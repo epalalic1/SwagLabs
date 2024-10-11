@@ -46,3 +46,12 @@ Feature: Product display
   And I should see shoping cart with the following products:
      | product_name |
      | Test.allTheThings() T-Shirt (Red) |
+
+ Scenario: Adding product to shopping cart while reviewing it
+   When I click on the name of first shown product in product list
+   Then I should be redirected to the invetory item page
+   When I click on add to cart button of product page
+   Then I should see badge on shopping cart with "1" product
+   And I click on Shopping cart button
+   Then I should be redirected to the cart page 
+   And I should have 1 product added to the shopping cart
