@@ -10,7 +10,6 @@ import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
 import io.cucumber.datatable.DataTable;
@@ -28,8 +27,6 @@ public class ProductsSteps {
 
     @Given("I am login with standard_user")
     public void i_am_login_with_standard_user() {
-      /*   WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();*/
         driver.get("https://www.saucedemo.com/");
         driver.findElement(By.id("user-name")).sendKeys("standard_user");
         driver.findElement(By.id("password")).sendKeys("secret_sauce");

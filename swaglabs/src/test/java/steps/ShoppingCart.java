@@ -1,15 +1,16 @@
 package steps;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 
 import io.cucumber.java.After;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -21,8 +22,6 @@ public class ShoppingCart {
 
     @Given("I am logged in with standard_user and added two product to shopping cart")
     public void i_am_logged_in_with_standard_user_and_added_two_product_to_shopping_cart () {
-       /* WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();*/
         driver.get("https://www.saucedemo.com/");
         driver.findElement(By.id("user-name")).sendKeys("standard_user");
         driver.findElement(By.id("password")).sendKeys("secret_sauce");
@@ -52,6 +51,26 @@ public class ShoppingCart {
     public void i_click_on_remove_button_of_product_page () {
         driver.findElement(By.id("remove")).click();
     }
+
+    @When ("I click on menu button")
+    public void i_click_on_menu_button () {
+        driver.findElement(By.id("react-burger-menu-btn")).click();
+    }
+
+    @And ("I click on option {string}")
+    public void  i_click_on_option(String option) {
+        WebElement menuItem = driver.findElement(By.xpath("//a[contains(text(), '" + option + "')]"));
+        if (menuItem.isDisplayed() && menuItem.isEnabled()) {
+            menuItem.click();
+         } else {
+             System.out.println("Element is not visible.");
+         }
+    }
+    @Then ("I should be redirected to the login page")
+    public void i_should_be_redirected_to_the_login_page () throws InterruptedException {
+        assertTrue(driver.getCurrentUrl().contains("https://www.saucedemo.com/"));
+        Thread.sleep(5000);
+    } 
 
     @Then ("I should see one product left in shopping cart list")
     public void i_should_see_one_product_left_in_shopping_cart_list () {
