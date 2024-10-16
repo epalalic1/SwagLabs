@@ -53,8 +53,14 @@ public class ShoppingCart {
     }
 
     @When ("I click on menu button")
-    public void i_click_on_menu_button () {
+    public void i_click_on_menu_button () throws InterruptedException {
         driver.findElement(By.id("react-burger-menu-btn")).click();
+        Thread.sleep(1000);
+    }
+
+    @When("I click on Continue Shopping button")
+    public void i_click_on_continue_shopping_button() {
+        driver.findElement(By.id("continue-shopping")).click();
     }
 
     @And ("I click on option {string}")
@@ -66,10 +72,11 @@ public class ShoppingCart {
              System.out.println("Element is not visible.");
          }
     }
+
     @Then ("I should be redirected to the login page")
     public void i_should_be_redirected_to_the_login_page () throws InterruptedException {
         assertTrue(driver.getCurrentUrl().contains("https://www.saucedemo.com/"));
-        Thread.sleep(5000);
+        ///Thread.sleep(2000);
     } 
 
     @Then ("I should see one product left in shopping cart list")

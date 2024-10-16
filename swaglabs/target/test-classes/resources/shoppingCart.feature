@@ -29,3 +29,9 @@ Scenario: Checking if data remains after logging out and logging back in
     And I click on Shopping cart button
     Then I should be redirected to the cart page 
     And I should have 2 product added to the shopping cart
+    
+
+Scenario: Return to shopping page
+    When I click on Continue Shopping button
+    Then I should be redirected to the homepage
+    Then I should see badge on shopping cart with "2" product
