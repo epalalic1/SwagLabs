@@ -9,13 +9,13 @@ Scenario: Removing product from shoping cart
     Then I should see one product left in shopping cart list
 
 Scenario: Removing product while rewiewing it from
- When I click on name of first product in shopping list cart
- Then I should be redirected to the invetory item page
- When I click on remove button of product page
- Then I should see badge on shopping cart with "1" product
- And I click on Shopping cart button
- Then I should be redirected to the cart page 
- And I should have 1 product added to the shopping cart
+    When I click on name of first product in shopping list cart
+    Then I should be redirected to the invetory item page
+    When I click on remove button of product page
+    Then I should see badge on shopping cart with "1" product
+    And I click on Shopping cart button
+    Then I should be redirected to the cart page 
+    And I should have 1 product added to the shopping cart
 
 Scenario: Checking if data remains after logging out and logging back in
     When I click on menu button

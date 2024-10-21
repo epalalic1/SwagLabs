@@ -25,6 +25,11 @@ public class Checkout {
         driver.findElement(By.id("checkout")).click();
     }
 
+    @When ("I click on Back Home")
+    public void i_click_on_Back_Home() {
+        driver.findElement(By.id("back-to-products")).click();
+    }
+    
     @And("I enter {string}, {string} and {string}")
     public void i_enter_firstName_lastName_and_postalCode(String firstName, String lastName, String postalCode) throws InterruptedException {
         driver.findElement(By.id("first-name")).sendKeys(firstName);
@@ -57,6 +62,11 @@ public class Checkout {
         assertEquals("https://www.saucedemo.com/cart.html", driver.getCurrentUrl());
     }
 
+    @Then ("I should be redirected to the last step of checkout")
+    public void i_should_be_redirected_to_the_last_step_of_checkout() {
+        assertEquals("https://www.saucedemo.com/checkout-complete.html", driver.getCurrentUrl());
+    }
+
     @And ("I click on Cancel button")
     public void  i_click_on_Cancel_button() {
         driver.findElement(By.id("cancel")).click();
@@ -83,6 +93,11 @@ public class Checkout {
         assertTrue(driver.findElement(By.className("summary_tax_label")).getText().contains(formattedValue));
         Double amountWithTax = amount + Double.parseDouble(formattedValue);
         assertTrue(driver.findElement(By.className("summary_total_label")).getText().contains(amountWithTax.toString()));
+    }
+
+    @And ("I click on Finish button")
+    public void i_click_on_finish_button() {
+        driver.findElement(By.id("finish")).click();
     }
 
 }
