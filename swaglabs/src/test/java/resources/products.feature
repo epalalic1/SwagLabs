@@ -55,3 +55,6 @@ Feature: Product display
    And I click on Shopping cart button
    Then I should be redirected to the cart page 
    And I should have 1 product added to the shopping cart
+
+Scenario: Check that products have valid images
+   Then I should see for every product valid image displayed

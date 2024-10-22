@@ -159,6 +159,31 @@ public class ProductsSteps {
         }
     }
 
+    @Then ("I should see for every product valid image displayed")
+    public void i_should_see_for_every_product_valid_image_displayed() {
+        List<WebElement> lista = driver.findElements(By.xpath("//div[@class='inventory_item']"));
+        for (int i = 0; i < 2; i++ ) {
+            String name = lista.get(i).findElement(By.className("inventory_item_img")).findElement(By.tagName("a")).findElement(By.tagName("img")).getAttribute("src");
+            String part = name.substring(name.indexOf("/static/media/") + "/static/media/".length());
+            String nameOfPics = part.replace("-", "").toLowerCase();
+            nameOfPics = nameOfPics.substring(0, nameOfPics.indexOf("1200"));
+            String nameOfPro = lista.get(i).findElement(By.className("inventory_item_name")).getText().toLowerCase();
+            String nameOfProduct = nameOfPro.replaceAll("[ .\\-()]", ""); // Uklanja razmake i specijalne karaktere
+            nameOfProduct = nameOfProduct.replaceAll("saucelabs|sauce", ""); // Uklanja "saucelabs" i "sauce"
+            nameOfPics = nameOfPics.replaceAll("saucelabs|sauce", "");
+            /*String nameOfProduct = nameOfPro.replace(" ", "");
+            nameOfProduct = nameOfProduct.replace(".", "");
+            nameOfProduct = nameOfProduct.replace("-", "");
+            nameOfProduct = nameOfProduct.replace("(", "");
+            nameOfProduct = nameOfProduct.replace(")", "");
+            nameOfPics = nameOfPics.replace("saucelabs", "");
+            nameOfPics = nameOfPics.replace("sauce", "");
+            nameOfProduct = nameOfProduct.replace("saucelabs", "");
+            nameOfProduct = nameOfProduct.replace("sauce", "");*/
+            assertTrue(nameOfPics.contains(nameOfProduct));
+        }
+    }
+
     @After("@FirstSet")
     public void tearDown() {
         WBManager.closeDriver();
