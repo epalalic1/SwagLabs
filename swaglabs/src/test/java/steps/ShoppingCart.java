@@ -86,8 +86,8 @@ public class ShoppingCart {
         assertEquals(1, lista.size());
         assertEquals("1",badgeText);
     }
-
-     @After("@SecondSet")
+    
+    @After("@SecondSet")
     public void tearDown() {
         WBManager.closeDriver();
     }

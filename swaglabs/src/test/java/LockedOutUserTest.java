@@ -9,6 +9,6 @@ import io.cucumber.junit.CucumberOptions;
         glue = "steps"
 )
 
-public class LockedOutUser {
+public class LockedOutUserTest {
     
 }

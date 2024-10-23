@@ -6,6 +6,7 @@ import static org.junit.Assert.assertTrue;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.IntStream;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -40,7 +41,8 @@ public class ProductsSteps {
         for (WebElement item : items) {
             for (String nameOfProduct : products) {
                 if (item.findElement(By.className("inventory_item_label")).findElement(By.tagName("a")).getText().equals(nameOfProduct)) {
-                    item.findElement(By.cssSelector("button.btn_primary")).click();
+                    driver.findElement(By.className("btn_inventory")).click();;
+                    //item.findElement(By.cssSelector("button.btn_primary")).click();
                 }
             }
         }
@@ -61,7 +63,8 @@ public class ProductsSteps {
 
     @When ("I click on add to cart button of product page")
     public void i_click_on_add_to_cart_button_of_product_page() {
-        driver.findElement(By.cssSelector("button.btn_primary")).click();
+        driver.findElement(By.className("btn_inventory")).click();;
+        //driver.findElement(By.cssSelector("button.btn_primary")).click();
     }
 
     @And ("I should have {int} product added to the shopping cart")
@@ -160,27 +163,22 @@ public class ProductsSteps {
     }
 
     @Then ("I should see for every product valid image displayed")
-    public void i_should_see_for_every_product_valid_image_displayed() {
+    public void i_should_see_for_every_product_valid_image_displayed() throws InterruptedException {
         List<WebElement> lista = driver.findElements(By.xpath("//div[@class='inventory_item']"));
         for (int i = 0; i < 2; i++ ) {
             String name = lista.get(i).findElement(By.className("inventory_item_img")).findElement(By.tagName("a")).findElement(By.tagName("img")).getAttribute("src");
             String part = name.substring(name.indexOf("/static/media/") + "/static/media/".length());
             String nameOfPics = part.replace("-", "").toLowerCase();
-            nameOfPics = nameOfPics.substring(0, nameOfPics.indexOf("1200"));
+            int index = IntStream.range(0, nameOfPics.length())
+                             .filter(j -> Character.isDigit(nameOfPics.charAt(j)))
+                             .findFirst()
+                             .orElse(-1);
+            String nameOfPic = nameOfPics.substring(0, index);
             String nameOfPro = lista.get(i).findElement(By.className("inventory_item_name")).getText().toLowerCase();
-            String nameOfProduct = nameOfPro.replaceAll("[ .\\-()]", ""); // Uklanja razmake i specijalne karaktere
-            nameOfProduct = nameOfProduct.replaceAll("saucelabs|sauce", ""); // Uklanja "saucelabs" i "sauce"
-            nameOfPics = nameOfPics.replaceAll("saucelabs|sauce", "");
-            /*String nameOfProduct = nameOfPro.replace(" ", "");
-            nameOfProduct = nameOfProduct.replace(".", "");
-            nameOfProduct = nameOfProduct.replace("-", "");
-            nameOfProduct = nameOfProduct.replace("(", "");
-            nameOfProduct = nameOfProduct.replace(")", "");
-            nameOfPics = nameOfPics.replace("saucelabs", "");
-            nameOfPics = nameOfPics.replace("sauce", "");
-            nameOfProduct = nameOfProduct.replace("saucelabs", "");
-            nameOfProduct = nameOfProduct.replace("sauce", "");*/
-            assertTrue(nameOfPics.contains(nameOfProduct));
+            String nameOfProduct = nameOfPro.replaceAll("[ .\\-()]", "");
+            nameOfProduct = nameOfProduct.replaceAll("saucelabs|sauce", "");
+            nameOfPic = nameOfPic.replaceAll("saucelabs|sauce", "");
+            assertTrue(nameOfPic.contains(nameOfProduct));
         }
     }
 
