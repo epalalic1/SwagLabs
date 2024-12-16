@@ -51,8 +51,8 @@ public class ProductsSteps {
     @When("I click on sorting option {string}")
     public void i_click_on_sorting_option(String sorting) {
         WebElement webElement = driver.findElement(By.xpath("//select[@class='product_sort_container']"));
-        Select sel = new Select(webElement);
-        sel.selectByVisibleText(sorting);        
+        Select sel = new Select(webElement);;   
+        sel.selectByVisibleText(sorting);   
     }
 
     @When ("I click on the name of first shown product in product list")
