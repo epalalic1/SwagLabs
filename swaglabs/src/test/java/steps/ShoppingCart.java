@@ -76,7 +76,7 @@ public class ShoppingCart {
     @Then ("I should be redirected to the login page")
     public void i_should_be_redirected_to_the_login_page () throws InterruptedException {
         assertTrue(driver.getCurrentUrl().contains("https://www.saucedemo.com/"));
-        ///Thread.sleep(2000);
+        Thread.sleep(1000);
     } 
 
     @Then ("I should see one product left in shopping cart list")
