@@ -11,6 +11,6 @@ import io.cucumber.junit.CucumberOptions;
 
 
 
-public class menuAndSocialLinks {
+public class MenuAndSocialLinks {
     
 }

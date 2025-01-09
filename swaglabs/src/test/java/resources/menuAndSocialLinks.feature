@@ -34,3 +34,17 @@ Background:
     Then I should see menu item labeled with "Reset App State"
     When I click on menu item labeled with "Reset App State"
     Then I should not see badge on shopping cart
+    And I should see Add button for the following products
+     | product_name |
+     | Sauce Labs Backpack |
+
+Scenario Outline: Redirecting to social media pages
+    When I click on "<socialMediaButton>" button
+    Then I should be redirected to "<socialMediaPage>" page
+    
+    Examples:
+      | socialMediaButton | socialMediaPage |
+      | twitter           | twitter         |
+      | facebook          | facebook        |
+      | linkedin          | linkedin        |
+
