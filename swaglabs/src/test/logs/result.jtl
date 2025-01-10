@@ -1,0 +1,136 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1736514318992,1109,HTTP Request,200,OK,Thread Group 1-2,text,true,,4003,350,5,5,https://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,504,0,447
+1736514318992,538,HTTP Request-0,301,Moved Permanently,Thread Group 1-2,text,true,,710,175,5,5,http://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,504,0,447
+1736514319545,556,HTTP Request-1,200,OK,Thread Group 1-2,text,true,,3293,175,5,5,https://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,556,0,520
+1736514319447,671,HTTP Request,200,OK,Thread Group 1-5,text,true,,4003,350,4,4,https://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,115,0,71
+1736514319447,115,HTTP Request-0,301,Moved Permanently,Thread Group 1-5,text,true,,710,175,4,4,http://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,115,0,71
+1736514319565,553,HTTP Request-1,200,OK,Thread Group 1-5,text,true,,3293,175,4,4,https://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,552,0,507
+1736514318992,1133,HTTP Request,200,OK,Thread Group 1-1,text,true,,4003,350,3,3,https://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,637,0,601
+1736514318992,637,HTTP Request-0,301,Moved Permanently,Thread Group 1-1,text,true,,710,175,3,3,http://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,637,0,601
+1736514319633,492,HTTP Request-1,200,OK,Thread Group 1-1,text,true,,3293,175,3,3,https://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,491,0,447
+1736514318992,1185,HTTP Request,200,OK,Thread Group 1-3,text,true,,4003,350,2,2,https://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,504,0,447
+1736514318992,562,HTTP Request-0,301,Moved Permanently,Thread Group 1-3,text,true,,710,175,2,2,http://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,504,0,447
+1736514319556,621,HTTP Request-1,200,OK,Thread Group 1-3,text,true,,3293,175,2,2,https://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,620,0,578
+1736514319260,928,HTTP Request,200,OK,Thread Group 1-4,text,true,,4003,350,1,1,https://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,258,0,211
+1736514319260,267,HTTP Request-0,301,Moved Permanently,Thread Group 1-4,text,true,,710,175,1,1,http://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,258,0,211
+1736514319545,643,HTTP Request-1,200,OK,Thread Group 1-4,text,true,,3293,175,1,1,https://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,641,0,606
+1736514553756,829,HTTP Request,200,OK,Thread Group 1-2,text,true,,4003,350,5,5,https://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,208,0,150
+1736514553756,224,HTTP Request-0,301,Moved Permanently,Thread Group 1-2,text,true,,710,175,5,5,http://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,208,0,150
+1736514553987,598,HTTP Request-1,200,OK,Thread Group 1-2,text,true,,3293,175,5,5,https://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,598,0,548
+1736514553795,804,HTTP Request,200,OK,Thread Group 1-3,text,true,,4003,350,5,5,https://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,169,0,115
+1736514553795,185,HTTP Request-0,301,Moved Permanently,Thread Group 1-3,text,true,,710,175,5,5,http://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,169,0,115
+1736514554278,306,HTTP Request,200,OK,Thread Group 1-5,text,true,,4003,350,5,5,https://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,102,0,64
+1736514553987,612,HTTP Request-1,200,OK,Thread Group 1-3,text,true,,3293,175,5,5,https://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,612,0,563
+1736514554278,102,HTTP Request-0,301,Moved Permanently,Thread Group 1-5,text,true,,710,175,5,5,http://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,102,0,64
+1736514554383,201,HTTP Request-1,200,OK,Thread Group 1-5,text,true,,3293,175,5,5,https://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,200,0,133
+1736514553997,661,HTTP Request,200,OK,Thread Group 1-4,text,true,,4003,350,2,2,https://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,113,0,61
+1736514553997,113,HTTP Request-0,301,Moved Permanently,Thread Group 1-4,text,true,,710,175,2,2,http://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,113,0,61
+1736514554114,544,HTTP Request-1,200,OK,Thread Group 1-4,text,true,,3293,175,2,2,https://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,544,0,513
+1736514553755,931,HTTP Request,200,OK,Thread Group 1-1,text,true,,4003,350,1,1,https://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,208,0,145
+1736514553755,224,HTTP Request-0,301,Moved Permanently,Thread Group 1-1,text,true,,710,175,1,1,http://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,208,0,145
+1736514553994,692,HTTP Request-1,200,OK,Thread Group 1-1,text,true,,3293,175,1,1,https://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,691,0,649
+1736515160341,768,HTTP Request,200,OK,Thread Group 1-2,text,true,,4002,350,5,5,https://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,237,0,181
+1736515160341,243,HTTP Request-0,301,Moved Permanently,Thread Group 1-2,text,true,,710,175,5,5,http://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,237,0,181
+1736515160592,517,HTTP Request-1,200,OK,Thread Group 1-2,text,true,,3292,175,5,5,https://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,516,0,421
+1736515160340,786,HTTP Request,200,OK,Thread Group 1-1,text,true,,4002,350,5,5,https://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,228,0,170
+1736515160340,244,HTTP Request-0,301,Moved Permanently,Thread Group 1-1,text,true,,710,175,5,5,http://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,228,0,170
+1736515160602,524,HTTP Request-1,200,OK,Thread Group 1-1,text,true,,3292,175,5,5,https://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,523,0,417
+1736515160740,384,HTTP Request,200,OK,Thread Group 1-5,text,true,,4002,350,5,5,https://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,182,0,133
+1736515160740,182,HTTP Request-0,301,Moved Permanently,Thread Group 1-5,text,true,,710,175,5,5,http://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,182,0,133
+1736515160932,192,HTTP Request-1,200,OK,Thread Group 1-5,text,true,,3292,175,5,5,https://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,191,0,118
+1736515160340,782,HTTP Request,200,OK,Thread Group 1-3,text,true,,4001,350,5,5,https://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,236,0,182
+1736515160340,244,HTTP Request-0,301,Moved Permanently,Thread Group 1-3,text,true,,710,175,5,5,http://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,236,0,182
+1736515160597,525,HTTP Request-1,200,OK,Thread Group 1-3,text,true,,3291,175,5,5,https://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,524,0,464
+1736515160508,609,HTTP Request,200,OK,Thread Group 1-4,text,true,,4002,350,5,5,https://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,102,0,56
+1736515160508,102,HTTP Request-0,301,Moved Permanently,Thread Group 1-4,text,true,,710,175,5,5,http://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,102,0,56
+1736515160612,505,HTTP Request-1,200,OK,Thread Group 1-4,text,true,,3292,175,5,5,https://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,503,0,364
+1736515210190,353,HTTP Request,200,OK,Thread Group 1-5,text,true,,4002,350,5,5,https://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,116,0,71
+1736515209838,722,HTTP Request,200,OK,Thread Group 1-3,text,true,,4002,350,5,5,https://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,236,0,192
+1736515210190,116,HTTP Request-0,301,Moved Permanently,Thread Group 1-5,text,true,,710,175,5,5,http://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,116,0,71
+1736515210311,232,HTTP Request-1,200,OK,Thread Group 1-5,text,true,,3292,175,5,5,https://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,231,0,194
+1736515209838,722,HTTP Request,200,OK,Thread Group 1-1,text,true,,4002,350,5,5,https://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,236,0,186
+1736515209838,255,HTTP Request-0,301,Moved Permanently,Thread Group 1-3,text,true,,710,175,5,5,http://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,236,0,192
+1736515210115,445,HTTP Request-1,200,OK,Thread Group 1-3,text,true,,3292,175,5,5,https://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,445,0,406
+1736515209838,255,HTTP Request-0,301,Moved Permanently,Thread Group 1-1,text,true,,710,175,5,5,http://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,236,0,186
+1736515210103,457,HTTP Request-1,200,OK,Thread Group 1-1,text,true,,3292,175,5,5,https://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,457,0,424
+1736515210005,550,HTTP Request,200,OK,Thread Group 1-4,text,true,,4002,350,5,5,https://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,119,0,75
+1736515210005,119,HTTP Request-0,301,Moved Permanently,Thread Group 1-4,text,true,,710,175,5,5,http://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,119,0,75
+1736515209838,722,HTTP Request,200,OK,Thread Group 1-2,text,true,,4002,350,5,5,https://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,236,0,176
+1736515210129,426,HTTP Request-1,200,OK,Thread Group 1-4,text,true,,3292,175,5,5,https://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,425,0,391
+1736515209838,253,HTTP Request-0,301,Moved Permanently,Thread Group 1-2,text,true,,710,175,5,5,http://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,236,0,176
+1736515210131,429,HTTP Request-1,200,OK,Thread Group 1-2,text,true,,3292,175,5,5,https://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,429,0,385
+1736515804245,811,HTTP Request,200,OK,Thread Group 1-3,text,true,,4002,350,5,5,https://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,258,0,145
+1736515804245,298,HTTP Request-0,301,Moved Permanently,Thread Group 1-3,text,true,,710,175,5,5,http://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,258,0,145
+1736515804555,501,HTTP Request-1,200,OK,Thread Group 1-3,text,true,,3292,175,5,5,https://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,500,0,377
+1736515804245,834,HTTP Request,200,OK,Thread Group 1-1,text,true,,4002,350,5,5,https://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,258,0,139
+1736515804245,822,HTTP Request,200,OK,Thread Group 1-2,text,true,,4002,350,5,5,https://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,258,0,150
+1736515804245,300,HTTP Request-0,301,Moved Permanently,Thread Group 1-1,text,true,,710,175,5,5,http://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,258,0,139
+1736515804245,297,HTTP Request-0,301,Moved Permanently,Thread Group 1-2,text,true,,710,175,5,5,http://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,258,0,150
+1736515804556,523,HTTP Request-1,200,OK,Thread Group 1-1,text,true,,3292,175,5,5,https://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,522,0,429
+1736515804553,514,HTTP Request-1,200,OK,Thread Group 1-2,text,true,,3292,175,5,5,https://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,513,0,449
+1736515804610,450,HTTP Request,200,OK,Thread Group 1-5,text,true,,4003,350,5,5,https://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,101,0,56
+1736515804610,101,HTTP Request-0,301,Moved Permanently,Thread Group 1-5,text,true,,710,175,5,5,http://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,101,0,56
+1736515804713,347,HTTP Request-1,200,OK,Thread Group 1-5,text,true,,3293,175,5,5,https://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,342,0,202
+1736515804416,652,HTTP Request,200,OK,Thread Group 1-4,text,true,,4002,350,5,5,https://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,106,0,65
+1736515804416,126,HTTP Request-0,301,Moved Permanently,Thread Group 1-4,text,true,,710,175,5,5,http://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,106,0,65
+1736515804553,515,HTTP Request-1,200,OK,Thread Group 1-4,text,true,,3292,175,5,5,https://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,513,0,387
+1736515919036,968,HTTP Request,200,OK,Thread Group 1-1,text,true,,4003,350,5,5,https://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,253,0,189
+1736515919036,278,HTTP Request-0,301,Moved Permanently,Thread Group 1-1,text,true,,710,175,5,5,http://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,253,0,189
+1736515919404,600,HTTP Request-1,200,OK,Thread Group 1-1,text,true,,3293,175,5,5,https://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,597,0,523
+1736515919068,946,HTTP Request,200,OK,Thread Group 1-3,text,true,,4003,350,5,5,https://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,222,0,142
+1736515919068,251,HTTP Request-0,301,Moved Permanently,Thread Group 1-3,text,true,,710,175,5,5,http://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,222,0,142
+1736515919322,692,HTTP Request-1,200,OK,Thread Group 1-3,text,true,,3293,175,5,5,https://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,691,0,634
+1736515919240,770,HTTP Request,200,OK,Thread Group 1-4,text,true,,4003,350,5,5,https://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,101,0,53
+1736515919240,101,HTTP Request-0,301,Moved Permanently,Thread Group 1-4,text,true,,710,175,5,5,http://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,101,0,53
+1736515919344,666,HTTP Request-1,200,OK,Thread Group 1-4,text,true,,3293,175,5,5,https://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,665,0,587
+1736515919037,968,HTTP Request,200,OK,Thread Group 1-2,text,true,,4003,350,5,5,https://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,253,0,189
+1736515919037,283,HTTP Request-0,301,Moved Permanently,Thread Group 1-2,text,true,,710,175,5,5,http://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,253,0,189
+1736515919381,624,HTTP Request-1,200,OK,Thread Group 1-2,text,true,,3293,175,5,5,https://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,623,0,523
+1736515919544,427,HTTP Request,200,OK,Thread Group 1-5,text,true,,4003,350,5,5,https://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,94,0,60
+1736515919544,94,HTTP Request-0,301,Moved Permanently,Thread Group 1-5,text,true,,710,175,5,5,http://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,94,0,60
+1736515919642,329,HTTP Request-1,200,OK,Thread Group 1-5,text,true,,3293,175,5,5,https://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,328,0,279
+1736516081372,718,HTTP Request,200,OK,Thread Group 1-2,text,true,,4003,350,5,5,https://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,249,0,212
+1736516081372,265,HTTP Request-0,301,Moved Permanently,Thread Group 1-2,text,true,,710,175,5,5,http://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,249,0,212
+1736516081643,447,HTTP Request-1,200,OK,Thread Group 1-2,text,true,,3293,175,5,5,https://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,446,0,410
+1736516081596,546,HTTP Request,200,OK,Thread Group 1-4,text,true,,4003,350,5,5,https://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,96,0,56
+1736516081596,96,HTTP Request-0,301,Moved Permanently,Thread Group 1-4,text,true,,710,175,5,5,http://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,96,0,56
+1736516081694,448,HTTP Request-1,200,OK,Thread Group 1-4,text,true,,3293,175,5,5,https://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,447,0,411
+1736516081371,813,HTTP Request,200,OK,Thread Group 1-1,text,true,,4003,350,3,3,https://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,262,0,203
+1736516081371,265,HTTP Request-0,301,Moved Permanently,Thread Group 1-1,text,true,,710,175,3,3,http://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,262,0,203
+1736516081643,541,HTTP Request-1,200,OK,Thread Group 1-1,text,true,,3293,175,3,3,https://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,541,0,510
+1736516081428,768,HTTP Request,200,OK,Thread Group 1-3,text,true,,4003,350,2,2,https://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,193,0,142
+1736516081428,209,HTTP Request-0,301,Moved Permanently,Thread Group 1-3,text,true,,710,175,2,2,http://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,193,0,142
+1736516081644,552,HTTP Request-1,200,OK,Thread Group 1-3,text,true,,3293,175,2,2,https://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,551,0,523
+1736516081820,563,HTTP Request,200,OK,Thread Group 1-5,text,true,,4003,350,1,1,https://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,430,0,396
+1736516081820,430,HTTP Request-0,301,Moved Permanently,Thread Group 1-5,text,true,,710,175,1,1,http://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,430,0,396
+1736516082252,131,HTTP Request-1,200,OK,Thread Group 1-5,text,true,,3293,175,1,1,https://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,130,0,102
+1736516196242,534,HTTP Request,200,OK,Thread Group 1-4,text,true,,4003,350,5,5,https://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,177,0,109
+1736516196242,177,HTTP Request-0,301,Moved Permanently,Thread Group 1-4,text,true,,710,175,5,5,http://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,177,0,109
+1736516196422,354,HTTP Request-1,200,OK,Thread Group 1-4,text,true,,3293,175,5,5,https://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,353,0,266
+1736516195930,864,HTTP Request,200,OK,Thread Group 1-1,text,true,,4003,350,5,5,https://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,305,0,247
+1736516195930,322,HTTP Request-0,301,Moved Permanently,Thread Group 1-1,text,true,,710,175,5,5,http://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,305,0,247
+1736516196261,533,HTTP Request-1,200,OK,Thread Group 1-1,text,true,,3293,175,5,5,https://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,530,0,464
+1736516195930,855,HTTP Request,200,OK,Thread Group 1-2,text,true,,4003,350,5,5,https://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,305,0,242
+1736516195930,322,HTTP Request-0,301,Moved Permanently,Thread Group 1-2,text,true,,710,175,5,5,http://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,305,0,242
+1736516196259,526,HTTP Request-1,200,OK,Thread Group 1-2,text,true,,3293,175,5,5,https://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,525,0,463
+1736516195980,810,HTTP Request,200,OK,Thread Group 1-3,text,true,,4003,350,5,5,https://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,255,0,207
+1736516195980,270,HTTP Request-0,301,Moved Permanently,Thread Group 1-3,text,true,,710,175,5,5,http://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,255,0,207
+1736516196259,531,HTTP Request-1,200,OK,Thread Group 1-3,text,true,,3293,175,5,5,https://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,531,0,444
+1736516196604,386,HTTP Request,200,OK,Thread Group 1-5,text,true,,4003,350,1,1,https://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,217,0,175
+1736516196604,217,HTTP Request-0,301,Moved Permanently,Thread Group 1-5,text,true,,710,175,1,1,http://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,217,0,175
+1736516196824,166,HTTP Request-1,200,OK,Thread Group 1-5,text,true,,3293,175,1,1,https://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,165,0,116
+1736517009180,486,HTTP Request,200,OK,Thread Group 1-4,text,true,,4001,350,5,5,https://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,182,0,69
+1736517009029,626,HTTP Request,200,OK,Thread Group 1-2,text,true,,4001,350,5,5,https://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,334,0,158
+1736517009180,183,HTTP Request-0,301,Moved Permanently,Thread Group 1-4,text,true,,708,175,5,5,http://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,182,0,69
+1736517009029,334,HTTP Request-0,301,Moved Permanently,Thread Group 1-2,text,true,,708,175,5,5,http://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,334,0,158
+1736517009376,290,HTTP Request-1,200,OK,Thread Group 1-4,text,true,,3293,175,5,5,https://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,290,0,248
+1736517009375,280,HTTP Request-1,200,OK,Thread Group 1-2,text,true,,3293,175,5,5,https://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,279,0,236
+1736517009028,609,HTTP Request,200,OK,Thread Group 1-1,text,true,,4001,350,5,5,https://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,336,0,158
+1736517009028,336,HTTP Request-0,301,Moved Permanently,Thread Group 1-1,text,true,,708,175,5,5,http://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,336,0,158
+1736517009378,259,HTTP Request-1,200,OK,Thread Group 1-1,text,true,,3293,175,5,5,https://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,258,0,224
+1736517009028,656,HTTP Request,200,OK,Thread Group 1-3,text,true,,4002,350,5,5,https://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,336,0,158
+1736517009028,336,HTTP Request-0,301,Moved Permanently,Thread Group 1-3,text,true,,709,175,5,5,http://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,336,0,158
+1736517009381,303,HTTP Request-1,200,OK,Thread Group 1-3,text,true,,3293,175,5,5,https://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,300,0,265
+1736517009395,344,HTTP Request,200,OK,Thread Group 1-5,text,true,,4000,350,1,1,https://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,180,0,131
+1736517009395,180,HTTP Request-0,301,Moved Permanently,Thread Group 1-5,text,true,,707,175,1,1,http://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,180,0,131
+1736517009579,160,HTTP Request-1,200,OK,Thread Group 1-5,text,true,,3293,175,1,1,https://www.saucedemo.com/?username=performance_glitch_user&password=secret_sauce,160,0,128

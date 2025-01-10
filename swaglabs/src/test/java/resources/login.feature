@@ -19,4 +19,4 @@ Feature: Login Functionality
       |                | secret_sauce | Epic sadface: Username is required                                        |
       | standard_user  |              | Epic sadface: Password is required                                        |
       |                |              | Epic sadface: Username is required                                        |
-      |invalid_user    | wrong_pass   | Epic sadface: Username and password do not match any user in this service |
+      | invalid_user   | wrong_pass   | Epic sadface: Username and password do not match any user in this service |

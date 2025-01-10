@@ -2,18 +2,12 @@ package steps;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
-
-import java.time.Duration;
 import java.util.List;
 import java.util.Set;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import com.github.dockerjava.core.dockerfile.DockerfileStatement.Add;
 
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
