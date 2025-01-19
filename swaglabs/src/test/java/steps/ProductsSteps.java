@@ -37,13 +37,12 @@ public class ProductsSteps {
     @When ("I click on Add to cart button for the following products:")
     public void i_click_on_Add_to_cart_button_for_the_following_products (DataTable dataTable) {
         List<String> products = dataTable.asList(String.class);
-        List<WebElement> items = driver.findElements(By.xpath("//div[@class='inventory_item']"));
-        for (WebElement item : items) {
-            for (String nameOfProduct : products) {
-                if (item.findElement(By.className("inventory_item_label")).findElement(By.tagName("a")).getText().equals(nameOfProduct)) {
-                    driver.findElement(By.className("btn_inventory")).click();;
-                    //item.findElement(By.cssSelector("button.btn_primary")).click();
-                }
+        for (String nameOfProduct : products) {
+            if (!nameOfProduct.equals("product_name")) {
+                String newProductName = nameOfProduct.toLowerCase();
+                newProductName  = newProductName.replace(" ", "-");
+                String product = "add-to-cart-" + newProductName;
+                driver.findElement(By.id(product)).click();
             }
         }
     }
@@ -51,14 +50,28 @@ public class ProductsSteps {
     @When("I click on sorting option {string}")
     public void i_click_on_sorting_option(String sorting) {
         WebElement webElement = driver.findElement(By.xpath("//select[@class='product_sort_container']"));
-        Select sel = new Select(webElement);;   
+        Select sel = new Select(webElement);
         sel.selectByVisibleText(sorting);   
     }
 
-    @When ("I click on the name of first shown product in product list")
-    public void i_click_on_the_name_of_first_shown_product_in_product_list() {
-        WebElement item = driver.findElements(By.xpath("//div[@class='inventory_item']")).get(0);
-        item.findElement(By.className("inventory_item_label")).findElement(By.tagName("a")).click();
+    @When("I click on name for the following products:")
+    public void i_click_on_name_for_the_following_products(DataTable dataTable) throws InterruptedException {
+        List<String> products = dataTable.asList(String.class);
+        List<WebElement> items = driver.findElements(By.className("inventory_item"));
+
+        for (WebElement webElement : items) {
+            for (String nameOfProduct : products) {
+                if (!nameOfProduct.equals("product_name")) {
+                    String productName = webElement.findElement(By.className("inventory_item_name")).getText();
+                    System.out.println(productName + "------------");
+                    System.out.println(nameOfProduct + "***************");
+                    if (productName.equals(nameOfProduct)) {
+                        webElement.findElement(By.className("inventory_item_label")).findElement(By.tagName("a")).click();
+                    }
+                }
+            }
+        }
+   
     }
 
     @When ("I click on add to cart button of product page")
@@ -83,14 +96,20 @@ public class ProductsSteps {
         List<String> products = dataTable.asList(String.class);
         Boolean areSame = true;
         List<WebElement> lista = driver.findElements(By.xpath("//div[@class='cart_item']"));
-        for (WebElement item : lista ) {
-            String name = item.findElement(By.className("inventory_item_name")).getText();
-            if (!products.contains(name)) {
-                areSame = false;
-                break;
+        if (products.size() != lista.size()) {
+            areSame = false;
+            assertTrue(areSame);
+        }
+        else {
+            for (WebElement item : lista ) {
+                String name = item.findElement(By.className("inventory_item_name")).getText();
+                if (!products.contains(name)) {
+                    areSame = false;
+                    break;
+                }
             }
         }
-        assertTrue(areSame);
+        
     }
 
     @And ("I click on remove button of the following products")
