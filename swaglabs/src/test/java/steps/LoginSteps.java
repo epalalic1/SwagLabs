@@ -1,6 +1,10 @@
 package steps;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
+
+import java.util.NoSuchElementException;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -11,7 +15,6 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import utils.WBManager;
 
-
 public class LoginSteps {
 
     WebDriver driver = WBManager.getDriver();
@@ -20,7 +23,7 @@ public class LoginSteps {
     public void i_am_on_the_login_page() {
         driver.get("https://www.saucedemo.com/");
     }
-    
+
     @When("I enter valid credentials")
     public void i_enter_valid_credentials() {
         driver.findElement(By.id("user-name")).sendKeys("standard_user");
@@ -34,7 +37,7 @@ public class LoginSteps {
     }
 
     @When("I enter username {string}")
-    public void  i_enter_username(String username) {
+    public void i_enter_username(String username) {
         driver.findElement(By.id("user-name")).sendKeys(username);
     }
 
@@ -52,8 +55,10 @@ public class LoginSteps {
 
     @Then("I should see error message {string}")
     public void i_should_see_error_message(String errorMessage) {
+        assertTrue(driver.findElement(By.cssSelector("h3[data-test='error']")).isDisplayed());
         String actualMessage = driver.findElement(By.cssSelector("h3[data-test='error']")).getText();
         assertEquals(errorMessage, actualMessage);
+
     }
 
     @After

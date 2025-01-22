@@ -36,8 +36,8 @@ public class ShoppingCart {
     
     @When ("I click on name of first product in shopping list cart")
     public void i_click_on_name_of_first_product_in_shopping_list_cart () {
-        WebElement lista = driver.findElements(By.xpath("//div[@class='cart_item']")).get(0);
-        lista.findElement(By.className("inventory_item_name")).click();
+        List<WebElement> lista = driver.findElements(By.className("inventory_item"));
+        lista.get(0).findElement(By.tagName("a")).click();
     }
 
     @When ("I click on remove button of first product in shopping cart list")

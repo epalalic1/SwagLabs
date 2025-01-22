@@ -54,24 +54,19 @@ public class ProductsSteps {
         sel.selectByVisibleText(sorting);   
     }
 
-    @When("I click on name for the following products:")
+    @When("I click on name for the following product:")
     public void i_click_on_name_for_the_following_products(DataTable dataTable) throws InterruptedException {
         List<String> products = dataTable.asList(String.class);
-        List<WebElement> items = driver.findElements(By.className("inventory_item"));
-
-        for (WebElement webElement : items) {
-            for (String nameOfProduct : products) {
-                if (!nameOfProduct.equals("product_name")) {
-                    String productName = webElement.findElement(By.className("inventory_item_name")).getText();
-                    System.out.println(productName + "------------");
-                    System.out.println(nameOfProduct + "***************");
-                    if (productName.equals(nameOfProduct)) {
-                        webElement.findElement(By.className("inventory_item_label")).findElement(By.tagName("a")).click();
-                    }
-                }
+        for (String string : products) {
+        }
+        List<WebElement> lista = driver.findElements(By.className("inventory_item"));
+        for (WebElement webElement : lista) {
+            String nameOfProduct = webElement.findElement(By.className("inventory_item_name")).getText();
+            if (products.contains(nameOfProduct)){
+                webElement.findElement(By.tagName("a")).click();
+                break;
             }
         }
-   
     }
 
     @When ("I click on add to cart button of product page")

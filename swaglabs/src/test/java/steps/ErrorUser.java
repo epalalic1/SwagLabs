@@ -17,9 +17,4 @@ public class ErrorUser {
         driver.findElement(By.id("password")).sendKeys("secret_sauce");
         driver.findElement(By.cssSelector(".btn_action")).click();
     }
-
-    @When ("I click")
-    public void  i_click() {
-        System.out.println("Usli smo");
-    }
 }
