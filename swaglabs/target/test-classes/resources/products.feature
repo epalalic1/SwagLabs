@@ -54,7 +54,22 @@ Feature: Product display
    Then I should see badge on shopping cart with "1" product
    And I click on Shopping cart button
    Then I should be redirected to the cart page 
-   And I should have 1 product added to the shopping cart
+   And I should have 1 product added to the shopping cart 
 
 Scenario: Check that products have valid images
    Then I should see for every product valid image displayed
+
+Scenario: Finishing order without products
+   And I click on Shopping cart button
+   When I click on Checkout button
+   Then I should be redirected to the first step of checkout
+   And I enter "<firstName>", "<lastName>" and "<postalCode>"
+   And I click on Continue button
+   Then I should redirected to the third step of checkout
+   And I click on Finish button
+   Then I should not be redirected to the last step of checkout
+
+
+    Examples:
+      | firstName | lastName | postalCode |
+      | Mike      | Johnson  | 11111      |

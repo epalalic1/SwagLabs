@@ -34,7 +34,7 @@ public class ShoppingCart {
     }
 
     
-    @When ("I click on name of first product in shopping list cart")
+    @When ("I click on the name of first shown product in product list")
     public void i_click_on_name_of_first_product_in_shopping_list_cart () {
         List<WebElement> lista = driver.findElements(By.className("inventory_item"));
         lista.get(0).findElement(By.tagName("a")).click();

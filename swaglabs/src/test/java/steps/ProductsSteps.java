@@ -1,6 +1,7 @@
 package steps;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
@@ -8,6 +9,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.stream.IntStream;
 
+import org.jetbrains.letsPlot.Geom.step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -88,7 +90,8 @@ public class ProductsSteps {
 
     @And ("I should see shoping cart with the following products:")
     public void i_should_see_shoping_cart_with_the_following_products (DataTable dataTable) {
-        List<String> products = dataTable.asList(String.class);
+        List<String> products = new ArrayList<>(dataTable.asList(String.class));
+        products.remove("product_name"); 
         Boolean areSame = true;
         List<WebElement> lista = driver.findElements(By.xpath("//div[@class='cart_item']"));
         if (products.size() != lista.size()) {
@@ -194,6 +197,11 @@ public class ProductsSteps {
             nameOfPic = nameOfPic.replaceAll("saucelabs|sauce", "");
             assertTrue(nameOfPic.contains(nameOfProduct));
         }
+    }
+
+    @Then ("I should not be redirected to the last step of checkout")
+    public void i_should_not_be_redirected_to_the_last_step_of_checkout() {
+        assertNotEquals("https://www.saucedemo.com/checkout-complete.html", driver.getCurrentUrl());
     }
 
     @After("@FirstSet")
